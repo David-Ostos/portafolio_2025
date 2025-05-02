@@ -10,3 +10,4 @@ export {
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
+export {SpaceParticles} from "./animaciones/banner/SpaceParticles"

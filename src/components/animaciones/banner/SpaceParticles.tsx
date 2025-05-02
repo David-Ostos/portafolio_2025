@@ -124,4 +124,4 @@ const SpaceParticles = ({
   );
 };
 
-export default SpaceParticles;
+export {SpaceParticles};

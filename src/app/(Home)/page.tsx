@@ -1,23 +1,15 @@
 "use client";
-import {useEffect, useState, Suspense, lazy} from "react";
 import Image from "next/image";
 import {FadeIn} from "@/components/prueba";
+import {SpaceParticles} from "@/components"
 
-const SpaceParticles = lazy(
-  () => import("@/components/animaciones/banner/SpaceParticles")
-);
 
 export default function Home() {
-  const [isParticlesMounted, setIsParticlesMounted] = useState(false);
 
-  useEffect(() => {
-    setIsParticlesMounted(true);
-  }, []);
 
   return (
     <div>
       <div>
-        <Suspense fallback={<div>Cargando partículas...</div>}>
           <SpaceParticles className="h-screen w-full">
             <div className="flex items-center justify-center w-full h-full">
               <div className="flex items-center justify-center m-20 w-full">
@@ -37,7 +29,6 @@ export default function Home() {
               </div>
             </div>
           </SpaceParticles>
-        </Suspense>
       </div>
     </div>
   );
