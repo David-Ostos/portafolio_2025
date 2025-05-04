@@ -39,7 +39,7 @@ export const SpaceParticles3 = ({
     <div className={`relative overflow-hidden ${className}`}>
       {init && (
         <Particles
-          id="tsparticles"
+          id="tsparticles" 
           particlesLoaded={particlesLoaded}
           options={{
             fullScreen: { enable: false },
@@ -63,7 +63,7 @@ export const SpaceParticles3 = ({
                 distance: 80,
                 color: '#fff',
                 opacity: 0.2,
-                width: 2,
+                width: 1,
               }
             },
             detectRetina: true,
