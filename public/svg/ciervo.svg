@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Cabeza -->
+  <path d="M100 20 L80 60 L120 60 Z" fill="none" stroke="#000" stroke-width="2"/>
+  
+  <!-- Astas -->
+  <path d="M90 20 Q85 10 75 5 
+           M110 20 Q115 10 125 5
+           M75 5 Q70 0 65 10
+           M125 5 Q130 0 135 10" 
+        fill="none" stroke="#000" stroke-width="1.5"/>
+  
+  <!-- Cuello y cuerpo -->
+  <path d="M100 60 L100 90 
+           L80 120 L70 160 
+           L100 140 L130 160 
+           L120 120 L100 90" 
+        fill="none" stroke="#000" stroke-width="2"/>
+  
+  <!-- Patas -->
+  <path d="M70 160 L60 190
+           M130 160 L140 190
+           M100 140 L90 170
+           M100 140 L110 170" 
+        fill="none" stroke="#000" stroke-width="2"/>
+  
+  <!-- Cola -->
+  <line x1="120" y1="120" x2="140" y2="110" stroke="#000" stroke-width="2"/>
+</svg>

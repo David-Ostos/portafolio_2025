@@ -11,3 +11,4 @@ export {
   navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
 export {SpaceParticles} from "./animaciones/banner/SpaceParticles"
+export {SpaceParticles3} from "./animaciones/banner/spaceParticles3"
