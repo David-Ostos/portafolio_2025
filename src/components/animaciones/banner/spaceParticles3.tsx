@@ -1,6 +1,6 @@
 'use client';
 
-import {useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import type { Container } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
@@ -26,7 +26,8 @@ export const SpaceParticles3 = ({
     });
   }, []);
 
-  const particlesLoaded = (container: Container) => {
+  // Función corregida
+  const particlesLoaded = async (container?: Container): Promise<void> => {
     setLoaded(true);
     console.log(container);
   };
@@ -36,38 +37,40 @@ export const SpaceParticles3 = ({
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={{
-          fullScreen: { enable: false },
-          particles: {
-            number: { 
-              value: 150,  // Reducido para mejor rendimiento con conexiones
-              density: { enable: true, width: 800, height: 600 } 
+      {init && (
+        <Particles
+          id="tsparticles"
+          particlesLoaded={particlesLoaded}
+          options={{
+            fullScreen: { enable: false },
+            particles: {
+              number: { 
+                value: 150,
+                density: { enable: true, width: 800, height: 600 } 
+              },
+              color: { value: '#ffffff' },
+              shape: { type: 'circle' },
+              opacity: { value: { min: 0.1, max: 0.5 } },
+              size: { value: { min: 0.5, max: 2 } },
+              move: {
+                enable: true,
+                direction: 'none',
+                speed: { min: 0.1, max: 0.5 },
+                outModes: { default: 'bounce' },
+              },
+              links: {
+                enable: true,
+                distance: 80,
+                color: '#fff',
+                opacity: 0.2,
+                width: 2,
+              }
             },
-            color: { value: '#ffffff' },
-            shape: { type: 'circle' },
-            opacity: { value: { min: 0.1, max: 0.5 } },
-            size: { value: { min: 0.5, max: 2 } },
-            move: {
-              enable: true,
-              direction: 'none',  // Movimiento aleatorio para formar clusters
-              speed: { min: 0.1, max: 0.5 },
-              outModes: { default: 'bounce' },  // Rebote en bordes
-            },
-            links: {
-              enable: true,  // ¡Habilitar conexiones!
-              distance: 80,  // Distancia máxima para formar conexiones
-              color: '#fff',
-              opacity: 0.2,
-              width: 2,
-            }
-          },
-          detectRetina: true,
-        }}
-        className={canvasClass}
-      />
+            detectRetina: true,
+          }}
+          className={canvasClass}
+        />
+      )}
       <div className="relative z-10">
         {children}
       </div>
